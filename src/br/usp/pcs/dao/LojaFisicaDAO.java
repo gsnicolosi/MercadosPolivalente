@@ -50,8 +50,10 @@ public class LojaFisicaDAO {
 		
 		try{
 			statement = connection.createStatement();
+			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
 			long cnpj = loja.getCnpj();
-			Date fundacao = loja.getFundacao();
+			String fundacao = formatter.parse(loja.getFundacao());
 			long cep = loja.getCep();
 			int acessivel;
 			if (loja.isAcessivelDeficientes()) {
@@ -59,7 +61,7 @@ public class LojaFisicaDAO {
 			} else {
 				acessivel = 0;
 			}
-			statement.executeUpdate("INSERT INTO LojaFisica VALUES (" + cnpj + ", '" + fundacao+ ", '" + cep+ "', '" + acessivel +"');");
+			statement.executeUpdate("INSERT INTO LojaFisica VALUES (" + cnpj + ", '" + fundacao+ "', " + cep+ ", " + acessivel +");");
 			success = true;
 		} finally {
 			statement.close();
