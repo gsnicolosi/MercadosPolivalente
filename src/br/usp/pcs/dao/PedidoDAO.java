@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,11 +56,11 @@ public class PedidoDAO {
 			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
 			int idPedido = pedido.getIdPedido();
-			String data = formatter.parse(pedido.getData());
+			String data = formatter.format(pedido.getData());
 			double preco = pedido.getPreco();
 			long cnpjLoja = pedido.getCnpjLoja();
 			long rgCliente = pedido.getRgCliente();
-			statement.executeUpdate("INSERT INTO Pedido VALUES (" + idPedido + ", '" + data + "', " + preco + ", " + cnpjLoja + ", " + rgCliente +");");
+			statement.executeUpdate("INSERT INTO Pedido VALUES (" + idPedido + ", " + preco + ", " + cnpjLoja + ", " + rgCliente +");");
 			success = true;
 		} finally {
 			statement.close();

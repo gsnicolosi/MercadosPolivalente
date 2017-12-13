@@ -5,9 +5,10 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;
 
 import br.usp.pcs.jdbc.ConnectionFactory;
 import br.usp.pcs.models.Funcionario;
@@ -54,7 +55,7 @@ public class FuncionarioDAO {
 
 			long rg = funcionario.getRg();
 			String nome = funcionario.getNome();
-			String dataAdmissao = formatter.parse(funcionario.getDataAdmissao());
+			String dataAdmissao = formatter.format(funcionario.getDataAdmissao());
 			String genero = funcionario.getGenero();
 			long cnpjLoja = funcionario.getCnpjLoja();
 			statement.executeUpdate("INSERT INTO Funcionario VALUES (" + rg + ", '" + nome + "', '" + dataAdmissao + "', '" + genero + "', " + cnpjLoja +");");

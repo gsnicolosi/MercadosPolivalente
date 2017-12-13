@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +55,7 @@ public class LojaFisicaDAO {
 			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
 			long cnpj = loja.getCnpj();
-			String fundacao = formatter.parse(loja.getFundacao());
+			String fundacao = formatter.format(loja.getFundacao());
 			long cep = loja.getCep();
 			int acessivel;
 			if (loja.isAcessivelDeficientes()) {
