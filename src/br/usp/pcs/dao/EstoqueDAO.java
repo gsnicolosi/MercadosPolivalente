@@ -53,7 +53,7 @@ public class EstoqueDAO {
 			int areaTotal = estoque.getAreaTotal();
 			int capacidade = estoque.getCapacidade();
 			long cnpjLoja = estoque.getCnpjLoja();
-			statement.executeUpdate("INSERT INTO Estoque VALUES (" + idEstoque + ", '" + capacidade + "', '" + areaTotal + "', '" + cnpjLoja +"');");
+			statement.executeUpdate("INSERT INTO Estoque VALUES (" + idEstoque + ", " + capacidade + ", " + areaTotal + ", " + cnpjLoja +");");
 			success = true;
 		} finally {
 			statement.close();
@@ -91,10 +91,10 @@ public class EstoqueDAO {
 		Statement statement = null;
 		String query = "UPDATE Estoque SET ";
 		if (estoque.getCapacidade() != 0) {
-			query = query + "Capacidade= '" + estoque.getCapacidade() + "', ";
+			query = query + "Capacidade= " + estoque.getCapacidade() + ", ";
 		}
 		if (estoque.getAreaTotal() != 0) {
-			query = query + "AreaTotal= '" + estoque.getAreaTotal() + "', ";
+			query = query + "AreaTotal= " + estoque.getAreaTotal() + ", ";
 		}
 		query = query.substring(0, query.length()-2);
 		query = query + " WHERE IdEstoque = " + estoque.getIdEstoque() + ";";
