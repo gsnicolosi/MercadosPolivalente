@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 import br.usp.pcs.jdbc.ConnectionFactory;
 import br.usp.pcs.models.Funcionario;
@@ -49,12 +50,14 @@ public class FuncionarioDAO {
 		
 		try{
 			statement = connection.createStatement();
+			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
 			long rg = funcionario.getRg();
 			String nome = funcionario.getNome();
-			Date dataAdmissao = funcionario.getDataAdmissao();
+			String dataAdmissao = formatter.parse(funcionario.getDataAdmissao());
 			String genero = funcionario.getGenero();
 			long cnpjLoja = funcionario.getCnpjLoja();
-			statement.executeUpdate("INSERT INTO Funcionario VALUES (" + rg + ", '" + nome + "', '" + dataAdmissao + "', '" + genero + "', '" + cnpjLoja +"');");
+			statement.executeUpdate("INSERT INTO Funcionario VALUES (" + rg + ", '" + nome + "', '" + dataAdmissao + "', '" + genero + "', " + cnpjLoja +");");
 			success = true;
 		} finally {
 			statement.close();
@@ -99,7 +102,7 @@ public class FuncionarioDAO {
 			query = query + "Genero= '" + funcionario.getGenero() + "', ";
 		}
 		if (funcionario.getCnpjLoja() != 0) {
-			query = query + "CNPJ_Loja= '" + funcionario.getCnpjLoja() + "', ";
+			query = query + "CNPJ_Loja= " + funcionario.getCnpjLoja() + ", ";
 		}
 
 		query = query.substring(0, query.length()-2);

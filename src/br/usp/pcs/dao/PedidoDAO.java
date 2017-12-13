@@ -51,12 +51,14 @@ public class PedidoDAO {
 		
 		try{
 			statement = connection.createStatement();
+			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
 			int idPedido = pedido.getIdPedido();
-			Date data = pedido.getData();
+			String data = formatter.parse(pedido.getData());
 			double preco = pedido.getPreco();
 			long cnpjLoja = pedido.getCnpjLoja();
 			long rgCliente = pedido.getRgCliente();
-			statement.executeUpdate("INSERT INTO Pedido VALUES (" + idPedido + ", '" + data + ", '" + preco + ", '" + cnpjLoja + ", '" + rgCliente +"');");
+			statement.executeUpdate("INSERT INTO Pedido VALUES (" + idPedido + ", '" + data + "', " + preco + ", " + cnpjLoja + ", " + rgCliente +");");
 			success = true;
 		} finally {
 			statement.close();
