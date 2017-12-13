@@ -1,0 +1,23 @@
+INSERT INTO Funcionario (RG, Nome, DataAdmissao, Genero, CNPJ_Loja)
+ VALUES
+ (927364581, 'Armando Ribeiro', "2008-09-17", 'Masculino', 23311974000191),
+ (883900427, 'Bruna Sanches', "2011-08-12", 'Feminino', 23311974000191),
+ (773884920, 'Alberto Riveira', "2008-09-11", 'Masculino', 23311974000191),
+ (993884500, 'Ronaldo Lepetit', "2014-08-21", 'Masculino', 23311974000191),
+ (884902938, 'Pedro Clemens', "2003-08-9", 'Masculino', 72024871000156),
+ (394853999, 'Carla Merceneiro', "2003-12-21", 'Feminino', 72024871000156),
+ (392000593, 'Ana Maduro', "2002-10-22", 'Feminino', 72024871000156),
+ (148593884, 'Fabio Leiva', "2000-10-23", 'Masculino', 72024871000156),
+ (932249385, 'Carolina Dickens', "2013-11-25", 'Feminino', 56040732000160),
+ (116272263, 'Helena Sanches', "2007-08-24", 'Feminino', 56040732000160),
+ (900038475, 'Sabrina Santos', "2008-07-22", 'Feminino', 56040732000160),
+ (392884652, 'Fabricio Roberto', "2008-03-13", 'Masculino', 56040732000160),
+ (888390457, 'Helena Campos', "2001-02-10", 'Feminino', 30495885940849),
+ (334085033, 'Roberto Alves', "2005-01-15", 'Masculino', 30495885940849),
+ (039995830, 'Patricia Paulista', "2010-08-12", 'Feminino', 99387493553444),
+ (837849385, 'Cristiana Vegas', "1999-03-05", 'Feminino', 99387493553444),
+ (556793475, 'Gabriela Alves', "2012-01-21", 'Feminino', 99387493553444),
+ (855537840, 'Lionel Costa', "2014-01-24", 'Masculino', 99387493553444),
+ (999358903, 'Tabata Aires', "2016-11-14", 'Feminino', 99387493553444),
+ (393856383, 'Marco Nunes', "2010-04-11", 'Masculino', 99387493553444),
+ (777364937, 'Paulo Moutinho', "2007-04-10", 'Masculino', 33921992847224);
