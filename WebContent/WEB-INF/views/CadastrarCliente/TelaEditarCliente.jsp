@@ -10,11 +10,10 @@
 	  	<form action="clientes">	
 	  		<br>
 	  		<input hidden name="action" value="atualizar">
-		  	<p>CPF: <%= cliente.getCPF() %> <input hidden name="cpf" value="<%= cliente.getCPF() %>"></p> 
+		  	<p>RG: <%= cliente.getRg() %> <input hidden name="rg" value="<%= cliente.getRg() %>"></p> 
 		  	<p>Nome: <input type="text" placeholder="<%= cliente.getNome()%>" name="nome"></p>
-			<p>Endereço: <input type="text" placeholder="<%= cliente.getEndereco() %>" name="endereco"> </p>
-			<p>Telefone: <input type="number" placeholder="<%= cliente.getTelefone() %>" name="telefone"> </p>
-			<button type=button onclick="window.location.href='/LojaComputadores/clientes'">
+			<p>Gênero: <input type="text" placeholder="<%= cliente.getGenero() %>" name="genero"> </p>
+			<button type=button onclick="window.location.href='/MercadoPolivalente/clientes'">
 				<i class="fa fa-window-close-o" aria-hidden="true"></i> Cancelar
 			</button>
 	 		<button type=submit>

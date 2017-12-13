@@ -49,11 +49,10 @@ public class ProdutoDAO {
 		
 		try{
 			statement = connection.createStatement();
-			int idProduto = produto.getIdProduto();
 			String nome = produto.getNome();
 			String tipo = produto.getTipo();
 			double preco = produto.getPreco();
-			statement.executeUpdate("INSERT INTO Pedido VALUES (" + idProduto + ", '" + nome + "', '" + tipo + "', " + preco +");");
+			statement.executeUpdate("INSERT INTO Produto (Nome, Tipo, Preco) VALUES ('" + nome + "', '" + tipo + "', " + preco +");");
 			success = true;
 		} finally {
 			statement.close();
@@ -89,7 +88,7 @@ public class ProdutoDAO {
 	
 	public boolean update (Produto produto) throws SQLException{
 		Statement statement = null;
-		String query = "UPDATE Cliente SET ";
+		String query = "UPDATE Produto SET ";
 		if (!produto.getNome().equals("")) {
 			query = query + "Nome= '" + produto.getNome() + "', ";
 		}
@@ -100,7 +99,7 @@ public class ProdutoDAO {
 			query = query + "Preco= " + produto.getPreco() + ", ";
 		}
 		query = query.substring(0, query.length()-2);
-		query = query + " WHERE IdPedido = " + produto.getIdProduto() + ";";
+		query = query + " WHERE IdProduto = " + produto.getIdProduto() + ";";
 		try {
 			statement = connection.createStatement();
 			statement.executeUpdate(query);
@@ -117,7 +116,7 @@ public class ProdutoDAO {
 		try {
 			statement = connection.createStatement();
 			statement.executeQuery("SET FOREIGN_KEY_CHECKS=0;");
-			statement.executeUpdate("DELETE FROM Cliente WHERE IdPedido = " + idPedido + ";");
+			statement.executeUpdate("DELETE FROM Produto WHERE IdProduto = " + idPedido + ";");
 			statement.executeQuery("SET FOREIGN_KEY_CHECKS=1;");
 		} finally {
 			statement.close();

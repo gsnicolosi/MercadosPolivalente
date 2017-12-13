@@ -14,13 +14,13 @@ public class Deletar implements Logica {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String stringCPF = req.getParameter("cpf");
-		long longCPF = Long.parseLong(stringCPF);
+		String stringRG = req.getParameter("rg");
+		long longRG = Long.parseLong(stringRG);
 		
 		ClienteDAO clienteDAO = new ClienteDAO();
 		
 		try{
-			clienteDAO.remove(longCPF);
+			clienteDAO.remove(longRG);
 			
 			req.setAttribute("fail", false);
 		} 

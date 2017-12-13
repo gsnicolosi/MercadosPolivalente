@@ -13,17 +13,15 @@ public class Gravar implements Logica {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String stringCPF = req.getParameter("cpf");
-		long longCPF = Long.parseLong(stringCPF);		
+		String stringRG = req.getParameter("rg");
+		long longRG = Long.parseLong(stringRG);
 		String nome = req.getParameter("nome");
-		String endereco = req.getParameter("endereco");
-		String telefone = req.getParameter("telefone");
+		String genero = req.getParameter("genero");
 		
 		Cliente cliente = new Cliente();
-		cliente.setCPF(longCPF);
+		cliente.setRg(longRG);
 		cliente.setNome(nome);
-		cliente.setEndereco(endereco);
-		cliente.setTelefone(telefone);
+		cliente.setGenero(genero);
 		
 		ClienteDAO clienteDAO = new ClienteDAO();
 		
@@ -38,7 +36,7 @@ public class Gravar implements Logica {
 		} finally {
 
 			try {
-				cliente = clienteDAO.findByPrimaryKey(longCPF);
+				cliente = clienteDAO.findByPrimaryKey(longRG);
 				req.setAttribute("cliente", cliente);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

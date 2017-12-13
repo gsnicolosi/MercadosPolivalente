@@ -11,11 +11,11 @@ public class Editar implements Logica {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String stringCPF = req.getParameter("cpf");
-		long longCPF = Long.parseLong(stringCPF);
+		String stringRG = req.getParameter("rg");
+		long longRG = Long.parseLong(stringRG);
 		
 		ClienteDAO clienteDAO = new ClienteDAO();
-		Cliente cliente = clienteDAO.findByPrimaryKey(longCPF);
+		Cliente cliente = clienteDAO.findByPrimaryKey(longRG);
 		req.setAttribute("cliente", cliente);
 	
 		return "TelaEditarCliente.jsp";

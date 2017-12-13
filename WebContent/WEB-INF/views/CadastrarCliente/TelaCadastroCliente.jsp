@@ -8,11 +8,10 @@
 	  	<form action="clientes">	
 	  		<br>
 	  		<input hidden name="action" value="gravar">
-		  	<p>CPF:<input type="number"name="cpf" required></p> 
+		  	<p>RG:<input type="number"name="rg" required></p> 
 		  	<p>Nome: <input type="text" name="nome" required></p>
-			<p>Endereço: <input type="text" name="endereco" required> </p>
-			<p>Telefone: <input type="number" name="telefone" required> </p>
-			<button type=button onclick="window.location.href='/LojaComputadores/clientes'">
+			<p>Gênero: <input type="text" name="genero" required> </p>
+			<button type=button onclick="window.location.href='/MercadoPolivalente/clientes'">
 				<i class="fa fa-window-close-o" aria-hidden="true"></i> Cancelar
 			</button>
 	 		<button type=submit>

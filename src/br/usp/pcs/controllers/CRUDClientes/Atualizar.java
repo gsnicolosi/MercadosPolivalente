@@ -13,25 +13,21 @@ public class Atualizar implements Logica {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String stringCPF = req.getParameter("cpf");
-		long longCPF = Long.parseLong(stringCPF);
+		String stringRG = req.getParameter("rg");
+		long longRG = Long.parseLong(stringRG);
 		
 		ClienteDAO clienteDAO = new ClienteDAO();
 		
 		Cliente cliente = new Cliente();
-		cliente.setCPF(longCPF);
+		cliente.setRg(longRG);
 		String nome = req.getParameter("nome");
-		String endereco = req.getParameter("endereco");
-		String telefone = req.getParameter("telefone");
+		String genero = req.getParameter("genero");
 		
 		if (nome != null) {
 			cliente.setNome(nome);
 		}
-		if (endereco != null) {
-			cliente.setEndereco(endereco);
-		}
-		if (telefone != null) {
-			cliente.setTelefone(telefone);
+		if (genero != null) {
+			cliente.setGenero(genero);
 		}
 		
 		try{
@@ -45,7 +41,7 @@ public class Atualizar implements Logica {
 		} finally {
 
 			try {
-				cliente = clienteDAO.findByPrimaryKey(longCPF);
+				cliente = clienteDAO.findByPrimaryKey(longRG);
 				req.setAttribute("cliente", cliente);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
