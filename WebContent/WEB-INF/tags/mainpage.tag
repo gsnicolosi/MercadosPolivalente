@@ -21,10 +21,10 @@
 
 	<ul class="navbar">
 	  <li> <!--Formatacao estranha para evitar espacos nas linhas-->
-	   <a href="solicitar-pedido" id="navbar-link-1" onclick="toggleActiveLink(1)">Realizar Pedido</a></li><li>
-	   <a href="clientes" id="navbar-link-2" onclick="toggleActiveLink(2)">Gerenciar Clientes</a></li><li>
-	   <a href="#" id="navbar-link-3" onclick="toggleActiveLink(3)">Gerenciar Produtos</a></li><li>
-	   <a href="#" id="navbar-link-4" onclick="toggleActiveLink(4)">Gerar Relatório</a></li>
+	   <a href="clientes" id="navbar-link-1" onclick="toggleActiveLink(1)">Gerenciar Clientes</a></li><li>
+	   <a href="lojas" id="navbar-link-2" onclick="toggleActiveLink(2)">Gerenciar Lojas</a></li><li>
+	   <a href="pedidos" id="navbar-link-3" onclick="toggleActiveLink(3)">Gerenciar Pedidos</a></li><li>
+	   <a href="produtos" id="navbar-link-4" onclick="toggleActiveLink(4)">Gerenciar Produtos</a></li>
 	</ul>
 
 	<div class="content">
