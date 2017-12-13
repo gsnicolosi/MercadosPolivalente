@@ -53,7 +53,7 @@ public class ProdutoDAO {
 			String nome = produto.getNome();
 			String tipo = produto.getTipo();
 			double preco = produto.getPreco();
-			statement.executeUpdate("INSERT INTO Pedido VALUES (" + idProduto + ", '" + nome + ", '" + tipo + "', " + preco +");");
+			statement.executeUpdate("INSERT INTO Pedido VALUES (" + idProduto + ", '" + nome + "', '" + tipo + "', " + preco +");");
 			success = true;
 		} finally {
 			statement.close();
